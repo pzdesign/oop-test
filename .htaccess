@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteRule ^$ /myapp/public/home.php [L]
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_URI} !^/myapp/public/home.php
+	RewriteRule ^(.*)$ /myapp/public/$1
+</IfModule>
